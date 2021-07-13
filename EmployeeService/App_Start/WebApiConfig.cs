@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
+using WebApiContrib.Formatting.Jsonp;
 
 namespace EmployeeService
 {
@@ -19,6 +21,11 @@ namespace EmployeeService
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            //EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
+            //config.EnableCors(cors);
+            //* for all websites or enter the websites you want to give access to
+            //var jsonpmediaformatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
+            //config.Formatters.Insert(0, jsonpmediaformatter);
         }
     }
 }
